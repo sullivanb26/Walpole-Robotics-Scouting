@@ -1,0 +1,94 @@
+* {
+    font-family: Minecraft;
+    font-weight:400;
+    text-align: center;
+}
+#scoringAuto {
+    display:grid;
+    grid-template-columns: 40% 20% 40%;
+    grid-template-rows: repeat(3, 33%);
+    gap:1%;
+}
+#scoringAuto > div {
+    position:relative;
+    top:50%;
+    transform: translateY(-50%);
+}
+#scoringTele {
+    display:grid;
+    grid-template-columns: 40% 20% 40%;
+    grid-template-rows: repeat(3, 33%);
+    gap:1%;
+}
+#scoringTele > div {
+    position:relative;
+    top:50%;
+    transform: translateY(-50%);
+}
+#output {
+    width:100vw;
+    height:100vh;
+    display:none;
+    z-index: 5;
+    position: fixed;
+    left: 0;
+    top: 0;
+}
+#background {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    left:0;
+    top:0;
+    z-index: -1;
+}
+#modal {
+    position: absolute;
+    left:50%;
+    top:50%;
+    transform: translate(-50%, -50%);
+    background-color:rgb(180, 180, 180);
+    height:90vh;
+    aspect-ratio: 2/3;
+    border: 1vh rgb(61, 1, 181) solid;
+    border-radius: 1vh;
+}
+#qrcode {
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+}
+#close {
+    width:50%;
+    aspect-ratio: 3/2;
+    background-color: rgb(180, 180, 180);
+    border: rgb(61, 1, 181);
+    z-index: 1000;
+}
+.cone {
+    display:flex;
+    justify-content: center;
+    aspect-ratio: 1/1;
+    background-color: #FEB00A;
+    text-align: center;
+    border-radius: 15px;
+}
+.cube {
+    display:flex;
+    justify-content: center;
+    aspect-ratio: 1/1;
+    background-color: #3D01B5;
+    text-align: center;
+    border-radius: 15px;
+}
+.position {
+    text-align: center;
+    height:fit-content;
+}
+
+@font-face {
+    font-family: Minecraft;
+    src: url(minecraft.otf);
+}

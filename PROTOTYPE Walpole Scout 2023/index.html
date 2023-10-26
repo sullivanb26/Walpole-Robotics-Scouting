@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charSet="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport"
+        content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>Scouting Timberwolves</title>
+    <link rel="preload" href="tailwind.css" as="style" />
+    <link rel="stylesheet" href="tailwind.css" data-n-g="" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="logo.png" type="image/x-icon">
+</head>
+
+<body>
+    <div id="__next">
+        <script>!function () { try { var d = document.documentElement, c = d.classList; c.remove('light', 'dark'); var e = localStorage.getItem('theme'); if ('system' === e || (!e && true)) { var t = '(prefers-color-scheme: dark)', m = window.matchMedia(t); if (m.media !== t || m.matches) { d.style.colorScheme = 'dark'; c.add('dark') } else { d.style.colorScheme = 'light'; c.add('dark') } } else if (e) { c.add(e || '') } if (e === 'light' || e === 'dark') d.style.colorScheme = e } catch (e) { } }();</script>
+        <div class="min-h-screen py-2 dark:bg-gray-700">
+            <main class="flex w-full flex-1 flex-col items-center justify-center px-4 text-center">
+                <form class="w-full px-4">
+                    <div class="mt-4 grid grid-cols-1 gap-4 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
+                        <div class="mb-4 rounded bg-gray-100 shadow-md dark:bg-gray-600">
+                            <div class="mb-2 rounded-t bg-red-rhr p-1 shadow-md">
+                                <h2 class="font-rhr-ns text-2xl uppercase text-blue">Prematch</h2>
+                            </div>
+                            <div class="flex flex-col justify-start gap-2">
+                                <div class="mx-1 rounded bg-white leading-tight shadow-sm dark:bg-gray-500">
+                                    <div class="flex flex-row justify-between rounded-t bg-gray-300">
+                                        <p class="pl-2 text-left text-xs font-bold uppercase dark:text-black">Scouter
+                                            Initials</p>
+                                        <p class="mr-1 h-4 w-4 font-rhr text-red-rhr">!!</p>
+                                    </div>
+                                    <div><textarea
+                                            class="focus:shadow-outline w-full appearance-none break-words break-all rounded border leading-tight text-gray-700 shadow focus:outline-none dark:bg-gray-700 dark:text-white"
+                                            name="Scouter Initials_input" id="Initials_input"></textarea></div>
+                                </div>
+                                <div class="mx-1 rounded bg-white leading-tight shadow-sm dark:bg-gray-500">
+                                    <div class="flex flex-row justify-between rounded-t bg-gray-300">
+                                        <p class="pl-2 text-left text-xs font-bold uppercase dark:text-black">Match
+                                            Number</p>
+                                        <p class="mr-1 h-4 w-4 font-rhr text-red-rhr">!!</p>
+                                    </div>
+                                    <div><input class="w-full rounded py-2 dark:bg-gray-700 dark:text-white"
+                                            type="number" id="Match_Number" /></div>
+                                </div>
+                                <div class="mx-1 rounded bg-white leading-tight shadow-sm dark:bg-gray-500">
+                                    <div class="flex flex-row justify-between rounded-t bg-gray-300">
+                                        <p class="pl-2 text-left text-xs font-bold uppercase dark:text-black">Robot</p>
+                                    </div>
+                                    <div><select
+                                            class="w-full rounded bg-white px-4 py-2 dark:bg-gray-700 dark:text-white"
+                                            name="Robot" id="Robot">
+                                            <option value="R1" selected="">Red 1</option>
+                                            <option value="R2">Red 2</option>
+                                            <option value="R3">Red 3</option>
+                                            <option value="B1">Blue 1</option>
+                                            <option value="B2">Blue 2</option>
+                                            <option value="B3">Blue 3</option>
+                                        </select></div>
+                                </div>
+                                <div class="mx-1 rounded bg-white leading-tight shadow-sm dark:bg-gray-500">
+                                    <div class="flex flex-row justify-between rounded-t bg-gray-300">
+                                        <p class="pl-2 text-left text-xs font-bold uppercase dark:text-black">Team
+                                            Number</p>
+                                        <p class="mr-1 h-4 w-4 font-rhr text-red-rhr">!!</p>
+                                    </div>
+                                    <div><input class="w-full rounded py-2 dark:bg-gray-700 dark:text-white"
+                                            type="number" id="Team_Number" /></div>
+                                </div>
+                                <div class="mx-1 rounded bg-white leading-tight shadow-sm dark:bg-gray-500">
+                                    <div class="flex flex-row justify-between rounded-t bg-gray-300">
+                                        <p class="pl-2 text-left text-xs font-bold uppercase dark:text-black">No Show
+                                        </p>
+                                    </div>
+                                    <div>
+                                        <div class="form-check form-switch"><input
+                                                class="form-check-input m-2 h-5 w-9 cursor-pointer appearance-none rounded-full bg-gray-300 bg-contain bg-no-repeat align-top shadow-sm focus:outline-none"
+                                                type="checkbox" role="switch" id="No_Show" /></div>
+                                    </div>
+                                </div>
+                                <div class="mx-1 rounded bg-white leading-tight shadow-sm dark:bg-gray-500">
+                                    <div class="flex flex-row justify-between rounded-t bg-gray-300">
+                                        <p class="pl-2 text-left text-xs font-bold uppercase dark:text-black">Using
+                                            Human Player</p>
+                                    </div>
+                                    <div>
+                                        <div class="form-check form-switch"><input
+                                                class="form-check-input m-2 h-5 w-9 cursor-pointer appearance-none rounded-full bg-gray-300 bg-contain bg-no-repeat align-top shadow-sm focus:outline-none"
+                                                type="checkbox" role="switch" id="Using_Human_Player" /></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mb-4 rounded bg-gray-100 shadow-md dark:bg-gray-600">
+                            <div class="mb-2 rounded-t bg-red-rhr p-1 shadow-md">
+                                <h2 class="font-rhr-ns text-2xl uppercase text-blue">Autonomous</h2>
+                            </div>
+                            <div class="flex flex-col justify-start gap-2">
+                                <div class="mx-1 rounded bg-white leading-tight shadow-sm dark:bg-gray-500">
+                                    <div class="flex flex-row justify-between rounded-t bg-gray-300">
+                                        <p class="pl-2 text-left text-xs font-bold uppercase dark:text-black">Starting
+                                            Location</p>
+                                    </div>
+                                    <div><select
+                                            class="w-full rounded bg-white px-4 py-2 dark:bg-gray-700 dark:text-white"
+                                            name="Starting Location" id="Starting_Location">
+                                            <option value="nbp" selected="">Human Player Side</option>
+                                            <option value="mid">Middle</option>
+                                            <option value="bmp">Bump Side</option>
+                                        </select></div>
+                                </div>
+                                <div class="mx-1 rounded bg-white leading-tight shadow-sm dark:bg-gray-500">
+                                    <div class="flex flex-row justify-between rounded-t bg-gray-300">
+                                        <p class="pl-2 text-left text-xs font-bold uppercase dark:text-black">Mobility?
+                                        </p>
+                                    </div>
+                                    <div>
+                                        <div class="form-check form-switch"><input
+                                                class="form-check-input m-2 h-5 w-9 cursor-pointer appearance-none rounded-full bg-gray-300 bg-contain bg-no-repeat align-top shadow-sm focus:outline-none"
+                                                type="checkbox" role="switch" id="Mobility" /></div>
+                                    </div>
+                                </div>
+                                <!-- Cone Scoring -->
+                                <div id="scoringAuto">
+                                    <div class="mx-1 rounded leading-tight shadow-sm">
+
+                                        <div class="cone">
+                                            <div class="my-2 flex flex-row items-center justify-center"><button
+                                                    class="focus:shadow-outline w-8 rounded bg-gray-500 text-2xl text-white hover:bg-red-700 focus:outline-none dark:bg-gray-700"
+                                                    type="button" onclick="subTo('UCone')">-</button>
+                                                <h2 id="UCone" class="px-4 text-2xl dark:text-black">0</h2><button
+                                                    class="focus:shadow-outline w-8 rounded bg-gray-500 text-2xl  text-white hover:bg-red-700 focus:outline-none dark:bg-gray-700"
+                                                    type="button" onclick="addTo('UCone')">+</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="position">Upper</div>
+                                    <div class="mx-1 rounded leading-tight shadow-sm">
+                                        <div class="cube">
+                                            <div class="my-2 flex flex-row items-center justify-center"><button
+                                                    class="focus:shadow-outline w-8 rounded bg-gray-500 text-2xl text-white hover:bg-red-700 focus:outline-none dark:bg-gray-700"
+                                                    type="button" onclick="subTo('UCube')">-</button>
+                                                <h2 id="UCube" class="px-4 text-2xl dark:text-white">0</h2><button
+                                                    class="focus:shadow-outline w-8 rounded bg-gray-500 text-2xl  text-white hover:bg-red-700 focus:outline-none dark:bg-gray-700"
+                                                    type="button" onclick="addTo('UCube')">+</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="mx-1 rounded leading-tight shadow-sm">
+                                        <div class="cone">
+                                            <div class="my-2 flex flex-row items-center justify-center"><button
+                                                    class="focus:shadow-outline w-8 rounded bg-gray-500 text-2xl text-white hover:bg-red-700 focus:outline-none dark:bg-gray-700"
+                                                    type="button" onclick="subTo('MCone')">-</button>
+                                                <h2 id="MCone" class="px-4 text-2xl dark:text-black">0</h2><button
+                                                    class="focus:shadow-outline w-8 rounded bg-gray-500 text-2xl  text-white hover:bg-red-700 focus:outline-none dark:bg-gray-700"
+                                                    type="button" onclick="addTo('MCone')">+</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="position">Middle</div>
+                                    <div class="mx-1 rounded leading-tight shadow-sm">
+                                        <div class="cube">
+                                            <div class="my-2 flex flex-row items-center justify-center"><button
+                                                    class="focus:shadow-outline w-8 rounded bg-gray-500 text-2xl text-white hover:bg-red-700 focus:outline-none dark:bg-gray-700"
+                                                    type="button" onclick="subTo('MCube')">-</button>
+                                                <h2 id="MCube" class="px-4 text-2xl dark:text-white">0</h2><button
+                                                    class="focus:shadow-outline w-8 rounded bg-gray-500 text-2xl  text-white hover:bg-red-700 focus:outline-none dark:bg-gray-700"
+                                                    type="button" onclick="addTo('MCube')">+</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="mx-1 rounded leading-tight shadow-sm">
+                                        <div class="cone">
+                                            <div class="my-2 flex flex-row items-center justify-center"><button
+                                                    class="focus:shadow-outline w-8 rounded bg-gray-500 text-2xl text-white hover:bg-red-700 focus:outline-none dark:bg-gray-700"
+                                                    type="button" onclick="subTo('LCone')">-</button>
+                                                <h2 id="LCone" class="px-4 text-2xl dark:text-black">0</h2><button
+                                                    class="focus:shadow-outline w-8 rounded bg-gray-500 text-2xl  text-white hover:bg-red-700 focus:outline-none dark:bg-gray-700"
+                                                    type="button" onclick="addTo('LCone')">+</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="position">Lower</div>
+                                    <div class="mx-1 rounded leading-tight shadow-sm">
+                                        <div class="cube">
+                                            <div class="my-2 flex flex-row items-center justify-center"><button
+                                                    class="focus:shadow-outline w-8 rounded bg-gray-500 text-2xl text-white hover:bg-red-700 focus:outline-none dark:bg-gray-700"
+                                                    type="button" onclick="subTo('LCube')">-</button>
+                                                <h2 id="LCube" class="px-4 text-2xl dark:text-white">0</h2><button
+                                                    class="focus:shadow-outline w-8 rounded bg-gray-500 text-2xl  text-white hover:bg-red-700 focus:outline-none dark:bg-gray-700"
+                                                    type="button" onclick="addTo('LCube')">+</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mx-1 rounded bg-white leading-tight shadow-sm dark:bg-gray-500">
+                                    <div class="flex flex-row justify-between rounded-t bg-gray-300">
+                                        <p class="pl-2 text-left text-xs font-bold uppercase dark:text-black">Picked up
+                                            more Cube/Cone?</p>
+                                    </div>
+                                    <div>
+                                        <div class="form-check form-switch"><input
+                                                class="form-check-input m-2 h-5 w-9 cursor-pointer appearance-none rounded-full bg-gray-300 bg-contain bg-no-repeat align-top shadow-sm focus:outline-none"
+                                                type="checkbox" role="switch" id="Picked_up_more" /></div>
+                                    </div>
+                                </div>
+                                <div class="mx-1 rounded bg-white leading-tight shadow-sm dark:bg-gray-500">
+                                    <div class="flex flex-row justify-between rounded-t bg-gray-300">
+                                        <p class="pl-2 text-left text-xs font-bold uppercase dark:text-black">Docked</p>
+                                    </div>
+                                    <div>
+                                        <div class="form-check form-switch"><input
+                                                class="form-check-input m-2 h-5 w-9 cursor-pointer appearance-none rounded-full bg-gray-300 bg-contain bg-no-repeat align-top shadow-sm focus:outline-none"
+                                                type="checkbox" role="switch" id="Docked" /></div>
+                                    </div>
+                                </div>
+                                <div class="mx-1 rounded bg-white leading-tight shadow-sm dark:bg-gray-500">
+                                    <div class="flex flex-row justify-between rounded-t bg-gray-300">
+                                        <p class="pl-2 text-left text-xs font-bold uppercase dark:text-black">Engaged
+                                        </p>
+                                    </div>
+                                    <div>
+                                        <div class="form-check form-switch"><input
+                                                class="form-check-input m-2 h-5 w-9 cursor-pointer appearance-none rounded-full bg-gray-300 bg-contain bg-no-repeat align-top shadow-sm focus:outline-none"
+                                                type="checkbox" role="switch" id="Engaged" /></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mb-4 rounded bg-gray-100 shadow-md dark:bg-gray-600">
+                            <div class="mb-2 rounded-t bg-red-rhr p-1 shadow-md">
+                                <h2 class="font-rhr-ns text-2xl uppercase text-blue">Teleop</h2>
+                            </div>
+                            <div id="scoringTele">
+                                <div class="flex flex-col justify-start gap-2">
+                                    <div class="cone">
+                                        <div class="my-2 flex flex-row items-center justify-center"><button
+                                                class="focus:shadow-outline w-8 rounded bg-gray-500 text-2xl text-white hover:bg-red-700 focus:outline-none dark:bg-gray-700"
+                                                type="button" onclick="subTo('UCone2')">-</button>
+                                            <h2 id="UCone2" class="px-4 text-2xl dark:text-black">0</h2><button
+                                                class="focus:shadow-outline w-8 rounded bg-gray-500 text-2xl  text-white hover:bg-red-700 focus:outline-none dark:bg-gray-700"
+                                                type="button" onclick="addTo('UCone2')">+</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="position">Upper</div>
+                                <div class="mx-1 rounded leading-tight shadow-sm">
+                                    <div class="cube">
+                                        <div class="my-2 flex flex-row items-center justify-center"><button
+                                                class="focus:shadow-outline w-8 rounded bg-gray-500 text-2xl text-white hover:bg-red-700 focus:outline-none dark:bg-gray-700"
+                                                type="button" onclick="subTo('UCube2')">-</button>
+                                            <h2 id="UCube2" class="px-4 text-2xl dark:text-white">0</h2><button
+                                                class="focus:shadow-outline w-8 rounded bg-gray-500 text-2xl  text-white hover:bg-red-700 focus:outline-none dark:bg-gray-700"
+                                                type="button" onclick="addTo('UCube2')">+</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mx-1 rounded leading-tight shadow-sm">
+                                    <div class="cone">
+                                        <div class="my-2 flex flex-row items-center justify-center"><button
+                                                class="focus:shadow-outline w-8 rounded bg-gray-500 text-2xl text-white hover:bg-red-700 focus:outline-none dark:bg-gray-700"
+                                                type="button" onclick="subTo('MCone2')">-</button>
+                                            <h2 id="MCone2" class="px-4 text-2xl dark:text-black">0</h2><button
+                                                class="focus:shadow-outline w-8 rounded bg-gray-500 text-2xl  text-white hover:bg-red-700 focus:outline-none dark:bg-gray-700"
+                                                type="button" onclick="addTo('MCone2')">+</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="position">Middle</div>
+                                <div class="mx-1 rounded leading-tight shadow-sm">
+                                    <div class="cube">
+                                        <div class="my-2 flex flex-row items-center justify-center"><button
+                                                class="focus:shadow-outline w-8 rounded bg-gray-500 text-2xl text-white hover:bg-red-700 focus:outline-none dark:bg-gray-700"
+                                                type="button" onclick="subTo('MCube2')">-</button>
+                                            <h2 id="MCube2" class="px-4 text-2xl dark:text-white">0</h2><button
+                                                class="focus:shadow-outline w-8 rounded bg-gray-500 text-2xl  text-white hover:bg-red-700 focus:outline-none dark:bg-gray-700"
+                                                type="button" onclick="addTo('MCube2')">+</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mx-1 rounded leading-tight shadow-sm">
+                                    <div class="cone">
+                                        <div class="my-2 flex flex-row items-center justify-center"><button
+                                                class="focus:shadow-outline w-8 rounded bg-gray-500 text-2xl text-white hover:bg-red-700 focus:outline-none dark:bg-gray-700"
+                                                type="button" onclick="subTo('LCone2')">-</button>
+                                            <h2 id="LCone2" class="px-4 text-2xl dark:text-black">0</h2><button
+                                                class="focus:shadow-outline w-8 rounded bg-gray-500 text-2xl  text-white hover:bg-red-700 focus:outline-none dark:bg-gray-700"
+                                                type="button" onclick="addTo('LCone2')">+</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="position">Lower</div>
+                                <div class="mx-1 rounded leading-tight shadow-sm">
+                                    <div class="cube">
+                                        <div class="my-2 flex flex-row items-center justify-center"><button
+                                                class="focus:shadow-outline w-8 rounded bg-gray-500 text-2xl text-white hover:bg-red-700 focus:outline-none dark:bg-gray-700"
+                                                type="button" onclick="subTo('LCube2')">-</button>
+                                            <h2 id="LCube2" class="px-4 text-2xl dark:text-white">0</h2><button
+                                                class="focus:shadow-outline w-8 rounded bg-gray-500 text-2xl  text-white hover:bg-red-700 focus:outline-none dark:bg-gray-700"
+                                                type="button" onclick="addTo('LCube2')">+</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <br>
+                            <div class="mx-1 rounded bg-white leading-tight shadow-sm dark:bg-gray-500">
+                                <div class="flex flex-row justify-between rounded-t bg-gray-300">
+                                    <p class="pl-2 text-left text-xs font-bold uppercase dark:text-black">Pick up
+                                        Cube/Cone where</p>
+                                </div>
+                                <div><select class="w-full rounded bg-white px-4 py-2 dark:bg-gray-700 dark:text-white"
+                                        name="Pick up Cube/Cone where" id="PickupCapability">
+                                        <option value="SUBSTATION">Substation</option>
+                                        <option value="GROUND">Ground</option>
+                                        <option value="BOTH">Both</option>
+                                        <option value="X" selected="">Not Attempted</option>
+                                    </select></div>
+                            </div>
+                            <br>
+                        </div>
+                        <div class="mb-4 rounded bg-gray-100 shadow-md dark:bg-gray-600">
+                            <div class="mb-2 rounded-t bg-red-rhr p-1 shadow-md">
+                                <h2 class="font-rhr-ns text-2xl uppercase text-blue">Endgame</h2>
+                            </div>
+                            <div class="flex flex-col justify-start gap-2">
+                                <div class="mx-1 rounded bg-white leading-tight shadow-sm dark:bg-gray-500">
+                                    <div class="flex flex-row justify-between rounded-t bg-gray-300">
+                                        <p class="pl-2 text-left text-xs font-bold uppercase dark:text-black">Attempted
+                                            Balance Before Endgame?</p>
+                                    </div>
+                                    <div>
+                                        <div class="form-check form-switch"><input
+                                                class="form-check-input m-2 h-5 w-9 cursor-pointer appearance-none rounded-full bg-gray-300 bg-contain bg-no-repeat align-top shadow-sm focus:outline-none"
+                                                type="checkbox" role="switch" id="AttemptedBalanceBefore" /></div>
+                                    </div>
+                                </div>
+                                <div class="mx-1 rounded bg-white leading-tight shadow-sm dark:bg-gray-500">
+                                    <div class="flex flex-row justify-between rounded-t bg-gray-300">
+                                        <p class="pl-2 text-left text-xs font-bold uppercase dark:text-black">Charge
+                                            Station</p>
+                                    </div>
+                                    <div><select
+                                            class="w-full rounded bg-white px-4 py-2 dark:bg-gray-700 dark:text-white"
+                                            name="Charge Station" id="ChargeStation">
+                                            <option value="DOCK">Docked</option>
+                                            <option value="DOCK ENGAGE">Docked and Engaged</option>
+                                            <option value="PARKED">Parked</option>
+                                            <option value="X" selected="">Not Attempted</option>
+                                        </select></div>
+                                </div>
+                                <div class="mx-1 rounded bg-white leading-tight shadow-sm dark:bg-gray-500">
+                                    <div class="flex flex-row justify-between rounded-t bg-gray-300">
+                                        <p class="pl-2 text-left text-xs font-bold uppercase dark:text-black"># of
+                                            alliance bots docked *not itself*</p>
+                                    </div>
+                                    <div>
+                                        <div class="my-2 flex flex-row items-center justify-center"><button
+                                                class="focus:shadow-outline w-8 rounded bg-gray-500 text-2xl text-white hover:bg-red-700 focus:outline-none dark:bg-gray-700"
+                                                type="button" onclick="subTo('AllianceDocked')">-</button>
+                                            <h2 id="AllianceDocked" class="px-4 text-2xl dark:text-white">0</h2><button
+                                                class="focus:shadow-outline w-8 rounded bg-gray-500 text-2xl text-white hover:bg-red-700 focus:outline-none dark:bg-gray-700"
+                                                type="button" onclick="addTo('AllianceDocked')">+</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mb-4 rounded bg-gray-100 shadow-md dark:bg-gray-600">
+                            <div class="mb-2 rounded-t bg-red-rhr p-1 shadow-md">
+                                <h2 class="font-rhr-ns text-2xl uppercase text-blue">Postmatch</h2>
+                            </div>
+                            <div class="flex flex-col justify-start gap-2">
+                                <div class="mx-1 rounded bg-white leading-tight shadow-sm dark:bg-gray-500">
+                                    <div class="flex flex-row justify-between rounded-t bg-gray-300">
+                                        <p class="pl-2 text-left text-xs font-bold uppercase dark:text-black">Driver
+                                            Skill</p>
+                                    </div>
+                                    <div><select
+                                            class="w-full rounded bg-white px-4 py-2 dark:bg-gray-700 dark:text-white"
+                                            name="DriverSkill" id="Driver_Skill">
+                                            <option value="1">Not Effective</option>
+                                            <option value="2">Average</option>
+                                            <option value="3">Very Effective</option>
+                                            <option value="x" selected="">Not Observed</option>
+                                        </select></div>
+                                </div>
+                                <div class="mx-1 rounded bg-white leading-tight shadow-sm dark:bg-gray-500">
+                                    <div class="flex flex-row justify-between rounded-t bg-gray-300">
+                                        <p class="pl-2 text-left text-xs font-bold uppercase dark:text-black">Defense
+                                            Rating</p>
+                                    </div>
+                                    <div><select
+                                            class="w-full rounded bg-white px-4 py-2 dark:bg-gray-700 dark:text-white"
+                                            name="Defense Rating" id="DefenseRating">
+                                            <option value="1">Not Effective</option>
+                                            <option value="2">Average</option>
+                                            <option value="3">Very Effective</option>
+                                            <option value="x" selected="">Not Observed</option>
+                                        </select></div>
+                                </div>
+                                <div class="mx-1 rounded bg-white leading-tight shadow-sm dark:bg-gray-500">
+                                    <div class="flex flex-row justify-between rounded-t bg-gray-300">
+                                        <p class="pl-2 text-left text-xs font-bold uppercase dark:text-black">Died</p>
+                                    </div>
+                                    <div>
+                                        <div class="form-check form-switch"><input
+                                                class="form-check-input m-2 h-5 w-9 cursor-pointer appearance-none rounded-full bg-gray-300 bg-contain bg-no-repeat align-top shadow-sm focus:outline-none"
+                                                type="checkbox" role="switch" id="Died" /></div>
+                                    </div>
+                                </div>
+                                <div class="mx-1 rounded bg-white leading-tight shadow-sm dark:bg-gray-500">
+                                    <div class="flex flex-row justify-between rounded-t bg-gray-300">
+                                        <p class="pl-2 text-left text-xs font-bold uppercase dark:text-black">Tipped
+                                            Over</p>
+                                    </div>
+                                    <div>
+                                        <div class="form-check form-switch"><input
+                                                class="form-check-input m-2 h-5 w-9 cursor-pointer appearance-none rounded-full bg-gray-300 bg-contain bg-no-repeat align-top shadow-sm focus:outline-none"
+                                                type="checkbox" role="switch" id="Tipped" /></div>
+                                    </div>
+                                </div>
+                                <div class="mx-1 rounded bg-white leading-tight shadow-sm dark:bg-gray-500">
+                                    <div class="flex flex-row justify-between rounded-t bg-gray-300">
+                                        <p class="pl-2 text-left text-xs font-bold uppercase dark:text-black">Yellow/Red
+                                            Card</p>
+                                    </div>
+                                    <div>
+                                        <div class="form-check form-switch"><input
+                                                class="form-check-input m-2 h-5 w-9 cursor-pointer appearance-none rounded-full bg-gray-300 bg-contain bg-no-repeat align-top shadow-sm focus:outline-none"
+                                                type="checkbox" role="switch" id="Carded" /></div>
+                                    </div>
+                                </div>
+                                <div class="mx-1 rounded bg-white leading-tight shadow-sm dark:bg-gray-500">
+                                    <div class="flex flex-row justify-between rounded-t bg-gray-300">
+                                        <p class="pl-2 text-left text-xs font-bold uppercase dark:text-black">Comments
+                                        </p>
+                                    </div>
+                                    <div><textarea
+                                            class="focus:shadow-outline w-full appearance-none break-words break-all rounded border leading-tight text-gray-700 shadow focus:outline-none dark:bg-gray-700 dark:text-white"
+                                            name="Comments_input" id="Comments_input"></textarea></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mb-4 flex flex-col justify-center rounded bg-white py-2 shadow-md dark:bg-gray-600">
+                            <button
+                                class="focus:shadow-outline mx-2 rounded bg-gray-700 py-6 px-6 font-bold uppercase text-white hover:bg-gray-700 focus:shadow-lg focus:outline-none disabled:bg-gray-300 dark:bg-red-rhr"
+                                type="button" onclick="qrCode();">Commit</button><button
+                                class="focus:shadow-outline mx-2 my-6 rounded border border-red-rhr bg-white py-2 font-bold uppercase text-red-rhr hover:bg-red-200 focus:outline-none dark:bg-gray-500 dark:text-white dark:hover:bg-gray-700"
+                                type="button">Reset</button>
+                        </div>
+                    </div>
+                </form>
+            </main>
+        </div>
+    </div>
+    <div id="output">
+        <div id="background"></div>
+        <div id="modal">
+            <div id="qrcode"></div>
+            <button id="close" onclick="finished()">Close</button>
+        </div>
+    </div>
+    <!-- JQuery -->
+    <script src="js/jquery3.6.3.js"></script>
+    <!-- QRcode Library -->
+    <script src="js/qrcode.min.js"></script>
+    <!-- main script -->
+    <script src="js/script.js"></script>
+</body>
+
+</html>
