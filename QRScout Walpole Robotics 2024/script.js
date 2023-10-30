@@ -20,6 +20,9 @@ function loadConfig() {
         case "boolean":
           newBoolean(currentField.title, currentField.required, currentSectionName, currentField.defaultValue, currentField.code)
           break;
+        case "counter":
+          newCounter(currentField.title, currentField.required, currentSectionName, currentField.code)
+          break;
         default:
           break;
       }
@@ -77,27 +80,33 @@ function newBoolean(title, required, sectionID, defaultValue, fieldID) {
   if (defaultValue) {
     defaultValueIs = " checked";
   }
-  $(`#${sectionID}`).append(`<div class="boolean">${title}<input type="checkbox" id="${sectionID + fieldID}"${defaultValueIs}></div>`);
+  $(`#${sectionID}`).append(`<div class="boolean">${title}<input type="checkbox" name="${title}" id="${sectionID + fieldID}"${defaultValueIs}></div>`);
   console.log(title + " :newBoolean" + " :" + sectionID);
 }
 
-// newCounter function in the works
-// function newCounter(title, required, sectionID, defaultValue, fieldID) {
-//   var isRequired = "";
-//   if (required) {
-//     isRequired = " required";
-//   }
-//   var defaultValueIs = "";
-//   if (defaultValue) {
-//     defaultValueIs = " checked";
-//   }
-//   $(`#${sectionID}`).append(`<div class="boolean">${title}<input type="checkbox" id="${sectionID + fieldID}"${defaultValueIs}></div>`);
-//   console.log(title + " :newCounter" + " :" + sectionID);
-// }
+function newCounter(title, required, sectionID, fieldID) {
+  var isRequired = "";
+  if (required) {
+    isRequired = " required";
+  }
+  $(`#${sectionID}`).append(`<div class="counter">${title}<button onclick="addTo('${sectionID + fieldID}')">+</button><span id="${sectionID + fieldID}" name="${title}" value="1">0</span><button onclick="subTo('${sectionID + fieldID}')">-</button></div>`);
+  console.log(title + " :newCounter" + " :" + sectionID);
+}
 
 function addTo(id) {
-  $(`#${id}`).text(parseInt($(`#${id}`).text())+1);
+  var value = parseInt($(`#${id}`).text());
+  $(`#${id}`).text(value+1);
 }
 function subTo(id) {
-  $(`#${id}`).text(parseInt($(`#${id}`).text())-1);
+  var value = parseInt($(`#${id}`).text());
+  if (value>=1) {
+    $(`#${id}`).text(value-1);
+  }
+}
+
+function formHandler(event, form) {
+  event.preventDefault();
+  for (var value in form.elements) {
+    alert(form.elements[value].name + " : " + form.elements[value].value);
+  }
 }
