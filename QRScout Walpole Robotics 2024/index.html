@@ -6,9 +6,11 @@
   <title>Wolf Scout</title>
 </head>
 <body onload="loadConfig()">
-  <form action="alert();" id="mainForm">
-
+  <form method="dialog" id="mainForm">
+    
   </form>
+  <div class="counter">Text<button onclick="addTo(`sectionIDfieldIDnumber`)">+</button><span id="sectionIDfieldIDnumber">0</span><button onclick="subTo(`sectionIDfieldIDnumber`)">-</button></div>
+  <!-- ^^^ Test Counter -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   <script src="config.js"></script>
   <script src="script.js"></script>
