@@ -1,0 +1,50 @@
+{
+  "title": "Webpage Title",
+  "page_title": "Title of Page",
+  "sections": [
+    {
+      "name": "Section Name",
+      "fields": [
+        {
+          "title": "Text Input Title",
+          "type": "text",
+          "required": true,
+          "code": "textInputID"
+        },
+        {
+          "title": "Number Input Title",
+          "type": "number",
+          "required": true,
+          "code": "numberInputID"
+        },
+        {
+          "title": "Select Input Title",
+          "type": "select",
+          "required": true,
+          "code": "selectInputID",
+          "choices": {
+            "ID1": "Option 1",
+            "ID2": "Option 2",
+            "ID3": "Option 3"
+          },
+          "defaultValue": "ID1"
+        },
+        {
+          "title": "Boolean Input Title (Switch)",
+          "type": "boolean",
+          "defaultValue": false,
+          "required": false,
+          "code": "booleanInputID"
+        },
+        {
+          "code": "counterInputID",
+          "title": "Counter Input Title (+1 or -1 buttons)",
+          "type": "counter",
+          "defaultValue": 0,
+          "min": 0,
+          "required": false
+        }
+      ]
+    }
+  ]
+}
