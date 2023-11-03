@@ -4,6 +4,7 @@ startingConfig = `{
   "sections": [
     {
       "name": "Prematch",
+      "preserveDataOnReset": true,
       "fields": [
         {
           "title": "Scouter Initials",
