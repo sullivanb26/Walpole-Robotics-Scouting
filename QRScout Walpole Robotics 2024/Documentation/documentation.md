@@ -1,5 +1,5 @@
 # [Quick Links]
-- [How to add a new Section](#)
+- [How to add a new Section](#how-to-add-a-new-section)
 
 
 # How to add a new Section
