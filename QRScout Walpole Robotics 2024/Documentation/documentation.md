@@ -3,4 +3,5 @@
 
 
 # How to add a new Section
-In the [exampleconfig.js](../exampleconfig.js) file, 
+
+In the [exampleconfig.json](exampleconfig.json) file
