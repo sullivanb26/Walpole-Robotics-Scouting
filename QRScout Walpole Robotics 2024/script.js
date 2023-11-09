@@ -114,3 +114,9 @@ function formHandler(event, form) {
     console.log(`${elem.name}:${elem.value}:${elem.nodeName}:${elem.type}`);
   }
 }
+
+
+function toQR(data) {
+  document.getElementById("qrcode").innerHTML = "";
+  new QRCode(document.getElementById("qrcode"), data);
+}
