@@ -89,32 +89,36 @@ function newCounter(title, required, sectionID, fieldID) {
   if (required) {
     isRequired = " required";
   }
-  $(`#${sectionID}`).append(`<div class="counter">${title}<button type="button" onclick="addTo('${sectionID + fieldID}')">+</button><span id="${sectionID + fieldID}" name="${title}" value="0">0</span><button type="button" onclick="subTo('${sectionID + fieldID}')">-</button></div>`);
+  $(`#${sectionID}`).append(`<div class="counter">${title}<button name="add${sectionID + fieldID}" type="button" onclick="addTo('${sectionID + fieldID}')">+</button><input type="number" id="${sectionID + fieldID}" name="${title}" value="0"><button name="minus${sectionID + fieldID}" type="button" onclick="subTo('${sectionID + fieldID}')">-</button></div>`);
   // console.log(title + " :newCounter" + " :" + sectionID);
 }
 
 function addTo(id) {
-  var value = parseInt($(`#${id}`).text());
-  $(`#${id}`).text(value+1);
+  var valueOf = parseInt(document.getElementById(id).value);
+  document.getElementById(id).value = valueOf+1;
 }
 function subTo(id) {
-  var value = parseInt($(`#${id}`).text());
-  if (value>=1) {
-    $(`#${id}`).text(value-1);
+  var valueOf = document.getElementById(id).value;
+  if (valueOf>=1) {
+    document.getElementById(id).value = valueOf-1;
   }
 }
 
 function formHandler(event, form) {
   event.preventDefault();
+  var outputLog = "";
   for (var value in form.elements) {
     var elem = form.elements[value];
     if (elem.type == "checkbox") {
       elem.value = elem.checked;
     }
-    console.log(`${elem.name}:${elem.value}:${elem.nodeName}:${elem.type}`);
+    if((elem.type != "button") && (elem.type != "undefined") && (elem.type != "submit")) {
+      outputLog += elem.value;
+    }
+    outputLog += elem.value;
   }
+  toQR(outputLog);
 }
-
 
 function toQR(data) {
   document.getElementById("qrcode").innerHTML = "";
